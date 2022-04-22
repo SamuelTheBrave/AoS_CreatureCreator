@@ -5918,7 +5918,7 @@ function displayAllSteps() {
       };
       if (i == 6) {
         document.getElementById("ptsAct").innerHTML = numTextP;
-        if (document.getElementById("ptsAct").innerHTML > document.getElementById("ptsMax").innerHTML
+        if (parseInt(document.getElementById("ptsAct").innerHTML) > parseInt(document.getElementById("ptsMax").innerHTML)
         && document.getElementById("ptsMax").innerHTML != "-") { document.getElementById("ptsAct").setAttribute("style", "color: darkred"); }
         else { document.getElementById("ptsAct").setAttribute("style", "color: black"); };
       };

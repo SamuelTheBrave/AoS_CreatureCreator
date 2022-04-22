@@ -648,6 +648,9 @@ input.vertical {
   </div><!-- end of navbar -->
   <br>
 
+  <div class="sticky" id="warscrollshow" style="display: block; z-index: 9; text-align: right";>
+    <p1 style="font-size: 17px"><input type="checkbox" id="showhideCard" onclick="clickCard()" checked> show/hide Warscroll</p1>
+  
   <div class="sticky" id="warscrollcard" style="display: block; z-index: 9;";>
     <!-- <p style="margin: 0px auto 10px; text-align: center; width: 794px;"><b>This is a short preview of your Warscroll:</b></p> -->
     <div id="yourWarscroll" class="warscroll" style="width: 210mm; min-height: 59mm; display: block;">
@@ -758,6 +761,8 @@ input.vertical {
 
     </div><!-- end of warscroll -->
   </div><!-- end of warscrollcard -->
+  
+  </div><!-- end of warscrollShow -->
 
 
 <div class="allSteps">
@@ -5171,7 +5176,8 @@ function changeSize() {
 
   WS = document.getElementById("yourWarscroll");
   if (V == "autosize-card") { WS.setAttribute("style", "width: " + W + "mm; height: ''"); } 
-  else { WS.setAttribute("style", "width: " + W + "mm; height: " + H + "mm;"); };  
+  else { WS.setAttribute("style", "width: " + W + "mm; height: " + H + "mm;"); };   
+  document.getElementById("showhideCard").checked = true;
 };
 
 // print warscroll as png ------------------------------
@@ -5512,6 +5518,13 @@ function resetDmgTable() {
       };
     };
   };
+};
+
+// show/hide Warscroll ------------------------------
+function clickCard() {
+  if (document.getElementById("showhideCard").checked == true) { 
+    document.getElementById("yourWarscroll").style.display = "block"
+  } else { document.getElementById("yourWarscroll").style.display = "none" }
 };
 
 //  |||||||   ||||||||  ||    ||   ||||||   ||    ||  ||||||||
@@ -5954,6 +5967,7 @@ function showTab(n) {  // This function will display the specified tab of the fo
     document.getElementById("nextBtn").style.width = "350px";
     document.getElementById("nextBtn").innerHTML = "Start creating your hero!";
     document.getElementById("warscrollcard").style.display = "none";
+    document.getElementById("warscrollshow").style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
     document.getElementById("resetBtn").style.display = "inline";
@@ -5961,6 +5975,7 @@ function showTab(n) {  // This function will display the specified tab of the fo
     document.getElementById("resetBtn").innerHTML = "Reset";
     document.getElementById("nextBtn").innerHTML = "Next";
     document.getElementById("warscrollcard").style.display = "block";
+    document.getElementById("warscrollshow").style.display = "block";
     document.getElementById("roleDP").style.display = "block";
   };
   if (n == (x.length - 1)) {

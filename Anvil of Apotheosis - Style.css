@@ -1,0 +1,613 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /*font-family: "Pompei Std", serif;*/
+  font-family: "Minion Pro", serif;
+  font-size: 20px;
+  margin: 0;
+  background-image: url("https://i.ibb.co/x8tN7tN/Ao-S-WS-back-old.jpg");
+}
+
+/* Farbtabelle
+/*  #F2F2F2; /* grey */
+/*  #CCC4A1; /* GW dark gold background */
+/* background-color: rgb(145 136 77);
+/*  #E2DFC9; /* GW light gold background */
+/* background-color: rgb(166 156 107);
+/* background-color: rgb(185 178 137);
+/*  #1abc9c; /* green background */
+
+.outer-page, .main-header, .main-description {
+  width: 1100px;
+  margin: 0px auto;
+}
+
+.first-header {  /* Style the header */
+  padding: 2px; /* some padding */
+  text-align: center; /* center the text */
+  text-shadow: 0px 0px 18px #000;
+  background: #CCC4A1; /* GW dark gold background */
+  color: white; /* white text color */
+}
+.first-header .logo {
+  position: relative;
+  /*margin-right: 27px;*/
+}
+.first-header .logo:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 87px; height: 52px;
+  right: 12px; top: 18px;
+    background: url("https://i.ibb.co/kcXZDfL/Ao-S-WS-unofficial.png")
+}
+.first-header img {
+    vertical-align: middle;
+}
+.first-header h1 {font-family: "Pompei Std", serif; font-size: 180%;} /* Increase the font size of the h1 element */
+.first-header p  {font-size: 110%;}  /* Increase the font size of the p element */
+.first-header p1 {font-size: 90%;} /* Increase the font size of the p1 element */
+
+.navbar {  /* Style the top navigation bar */
+  position: relative;
+  overflow: hidden; /* Hide overflow */
+  background-color: #333; /* Dark background color */
+}
+.navbar a {  /* Style the navigation bar links */
+  float: left;            /* Make sure that the links stay side-by-side */
+  display: block;         /* Change the display to block, for responsive reasons (see below) */
+  color: white;           /* White text color */
+  text-align: center;     /* Center the text */
+  padding: 10px 20px;     /* Add some padding */
+  text-decoration: none;  /* Remove underline */
+}
+.navbar a:hover {  /* Change color on hover/mouse-over */
+  background-color: #ddd; /* Grey background color */
+  color: black; /* Black text color */
+}
+.navbar a.active {  /* Add a color to the active/current link */
+  background-color: #4CAF50;
+  color: white;
+}
+.navbar-centered a {  /* Center-aligned link */
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.navbar-right {  /* Right-aligned link */
+  float: right; /* Float a link to the right */
+}
+
+@page {
+  size: 21cm 29.7cm;
+  margin: 30mm 45mm 30mm 45mm;
+  /* change the margins as you want them to be. */
+}
+
+.warscroll {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  font-size: 80%;
+  margin: 0px auto 20px;
+  background-color: white; /*rgb(244,244,244);*/
+  -webkit-box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.75);
+     -moz-box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.75);
+          box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.75);
+  padding: 10px;
+  z-index: 5;
+}
+
+.profile {
+  width: 150px; height: 150px;
+  position: absolute;
+  background: url("https://i.ibb.co/F85GW6v/AoS2_WS_wheel_wtxt.png");
+  background-size: 150px 150px;
+  z-index: 3;
+  /*border: 1px solid black;*/
+}
+.statsTable .profile {
+  width: 112px; height: 112px;
+  /*background: url("https://i.ibb.co/F85GW6v/AoS2_WS_wheel_wtxt.png");*/
+  background-size: 112px 112px;
+  z-index: 4;
+}
+/*.profile .wheel {
+  width: 112px; height: 112px;
+  position: absolute;
+}*/
+.profile .numbers {
+  position: absolute;
+  top: 14%;
+  right: 11%;
+  bottom: 8%;
+  left: 10%;
+}
+.profile .numbers ul {
+    margin: 0px;
+  padding: 0px;
+  list-style: none outside none;
+  color: black;
+  font-family: "Minion Pro", serif;
+  font-size: 100%;
+  line-height: 0;
+  font-style: normal;
+  font-weight: bold;
+}
+.profile .numbers li {
+  /*border: 1px solid green;*/
+  text-align: center;
+  position: absolute;
+}
+.profile .numbers .q1 {  /* Move */
+  width: 100%;
+  bottom: 50%;
+  margin-bottom: 23%;
+}
+.profile .numbers .q2 {  /* Save */
+  width: 50%;
+  bottom: 49%;
+  left: 50%;
+}
+.profile .numbers .q3 {  /* Bravery */
+  width: 100%;
+  top: 50%;
+  margin-top: 20%;
+}
+.profile .numbers .q4 {  /* Wounds */
+  width: 50%;
+  bottom: 49%;
+  right: 50%;
+}
+.blackstar {  /* may be added as save, move, or others */
+  width: 19px; height: 19px;
+  position: absolute;
+  background: url("https://i.ibb.co/gPzxHNR/Ao-S-WS-blackstar.png");  
+  z-index: 6;
+  /* <img src=https://i.ibb.co/gPzxHNR/Ao-S-WS-blackstar.png alt="WarhammerAoS" style="display:block; margin: auto auto -5px;";> */
+}
+
+.points {
+  width: 49px; height: 49px;  
+  position: absolute;
+  top: 10px;
+  right: 2px;
+  /*margin: 0px 730px;*/
+  background: url("https://i.ibb.co/602Jhky/Ao-S2-WS-pts-dot.png");
+  background-size: 49px 49px;*/
+  z-index: 3;
+}
+.statsTable .points {
+  width: 30px; height: 30px;
+  background-size: 30px 30px;
+}
+/*.points .circle {
+  width: 30px; height: 30px;
+  position: absolute;    
+  font-size: 15px;
+}*/
+.points .numbers {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 10%;   
+}
+.points .numbers ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none outside none;
+  color: black;
+  font-family: "Minion Pro", serif;
+  line-height: 0;
+  font-style: normal;
+  font-weight: bold;
+}
+.points .numbers li {
+  text-align: center;
+  position: absolute;
+}
+.points .numbers .p1 {  /* destiny points used */
+  width: 100%;
+  top: 50%;
+}
+
+.statsTable .heroName {
+  border: 1px solid rgb(166 156 107);
+  border-style: solid;
+  background-color: #F2F2F2;
+  position: relative;
+  padding-left: 80px;/* padding-left: 25.4mm;*/
+  padding-right: 12px;
+  margin: 0px 15px;
+  min-height: 89px;/* min-height: 29.6mm;*/
+  text-align: center;
+  /*border: 1px solid black;*/
+}
+.heroName table {
+  font-family: "Pompei Std", serif;
+  font-size: 120%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #F2F2F2;
+  /*border: 1px solid black;*/
+}
+.heroName td {
+  font-size: 72%;
+  height: 56px;
+  padding: 0%;
+}
+.heroName th {
+  /* border: 1px solid #dddddd; */
+  /*background-color: rgb(185 178 137);/*#E2DFC9;*/
+  height: 30px;
+}
+
+.charSquare {
+  flex: 100%;    /* Set the width of the sidebar */
+  position: relative;
+  min-width: 350px;
+  max-width: 700px;
+  background-color: white;
+  padding: 0px;    /* Some padding */
+  /*border: 1px solid black;*/
+}
+.charSquare .charType {
+  /*border: 1px solid rgb(166 156 107);
+  border-style: solid solid solid solid;*/
+  position: relative;
+  margin: 0px 2px 2px 28px;
+  text-align: center;
+  /*border: 1px solid black;*/
+  z-index: 1;
+}
+.charType table {
+  /*font-family: "Minion Pro", serif;*/
+  font-family: "Pompei Std", serif;
+  font-size: 80%;
+  border: 1px solid rgb(166 156 107);
+  border-style: solid;
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+  background-color: #F2F2F2;
+}
+.charType caption {
+  height: 30px;
+}
+.charType th {
+  /* border: 1px solid #dddddd; */
+  /*background-color: rgb(185 178 137);/*#E2DFC9;*/
+  font-size: 150%;
+  text-align: center;
+  height: 92px;
+  padding: 1px 4px 1px 28px;
+}
+.charType td {
+  font-family: "Minion Pro", serif;
+  border: 1px solid rgb(166 156 107);
+  border-style: solid;
+  text-align: left;
+  height: 70px;
+  padding: 4px;
+}
+.charType .listArmy {
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(145 136 77);
+}
+.charType tr.marked {
+  background-color: lime;
+}
+.colorChanger {
+  animation: changeColor 0.5s;
+}
+@keyframes changeColor {
+  0% {background-color: #F2F2F2;}
+  50% {background-color: rgb(145 136 77);}
+  100% {background-color: #F2F2F2;}
+}
+
+.statsTable .gwTable {
+  position: relative;
+  padding-left: 15px;/* padding-left: 25.4mm;*/
+  padding-right: 15px;
+  /*border: 1px solid black;*/
+}
+.gwTable table {
+  font-family: "Pompei Std", serif;
+  font-size: 80%;
+  border: 1px solid rgb(166 156 107);
+  border-style: none;
+  border-spacing: 0;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  max-width: 1400px;
+  background-color: #F2F2F2;
+}
+/*.gwTable caption {
+  font-size: 110%;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+  text-align: left;
+  background-color: rgb(145 136 77);
+  padding: 6px 12px;
+}*/
+.headCap {
+  font-size: 110%;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+  text-align: left;
+  /*background-color: rgb(145 136 77);
+  padding: 6px 12px;*/
+}
+.gwTable th {
+  /* border: 1px solid #dddddd; */
+  font-size: 100%;
+  background-color: rgb(185 178 137);
+  height: auto;
+  padding: 2px;
+}
+.gwTable td {
+  font-family: "Minion Pro", serif;
+  font-size: 110%;
+  text-align: center;
+  border: 1px solid rgb(166 156 107);
+  border-style: solid none solid none;
+  height: auto;
+  padding: 1px;
+}
+.main tr:nth-child(odd) {
+  /* odd = starting with the first row
+  even = starting with the second row */
+  /*background-color: white;*/
+}
+/*.main tr.marked {
+  background-color: lime;
+}*/
+.warscroll .keywords {
+  position: relative;
+  margin: 0px 15px 0px 15px;
+  text-align: center;
+  /*border: 1px solid black;*/
+}
+.keywords table {  
+  font-family: "Pompei Std", serif;
+  font-size: 80%;
+  border: 1px solid rgb(166 156 107);
+  border-style: none;
+  border-spacing: 0;
+  border-collapse: collapse;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  max-width: 1400px;
+  background-color: #F2F2F2;
+}
+.keywords td {
+  font-family: "Minion Pro", serif;
+  font-size: 100%;
+  text-align: left;
+  border: 1px solid rgb(166 156 107);
+  border-style: solid;
+  padding: 4px;
+}
+.keywords th {
+  font-family: "Minion Pro", serif;
+  font-size: 100%;
+  background-color: rgb(185 178 137);
+  border: 1px solid rgb(166 156 107);
+  border-style: solid;
+  padding: 2px;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+}
+
+.row {  /* Column container */
+  display: flex;
+  flex-wrap: initial;
+}
+/* Create two unequal columns that sits next to each other */
+.side {  /* Sidebar/left column */
+  flex: 10%;  /* Set the width of the sidebar */
+  min-width: 20px;
+  max-width: 70px;
+  /*background-color: #f1f1f1; /* Grey background color */
+  padding: 10px;             /* Some padding */
+}
+.main {  /* Main column */
+  flex: 90%;               /* Set the width of the main content */
+  min-width: 400px;
+  max-width: 1400px;
+  background-color: white;   /* White background color */
+  padding: 10px;             /* Some padding */
+}
+.main h2 {font-family: "Pompei Std", serif; font-size: 120%;} /* Increase the font size of the h1 element */
+.main p6 {margin: 10px;}
+
+.innerTxtPre {
+  max-width: 1400px;
+  background-color: white;
+  padding: 5px;             /* Some padding */
+  column-width: auto;
+  column-count: 3;
+  text-align: left;
+  font-size: 85%;
+  margin: 0px 15px 0px 15px;
+}
+.des {
+  border: none;
+  border-style: none;
+  margin: 0px -3px 2px;
+  text-align: left;
+}
+.des td {
+  border: none;
+  border-style: none;
+  text-align: left;
+}
+t1 {
+  font-family: "Pompei Std", serif;
+  /*font-family: "Minion Pro", serif;*/
+  font-size: 100%;
+  font-weight: bold;
+}
+.innerT2 {
+  flex: 50%;
+  min-width: 600px;
+  max-width: 1400px;
+  background-color: white;
+  padding: 5px;             /* Some padding */
+  column-width: 600px;
+  column-count: 2;
+}
+.innerT3 {
+  flex: 50%;
+  min-width: 400px;
+  max-width: 1400px;
+  background-color: white;
+  padding: 5px;             /* Some padding */
+  column-width: 400px;
+  column-count: 3;
+}
+
+.fakeimg {  /* Fake image, just for this example */
+  background-color: #aaa;
+  /* width: 100%; */
+  padding: 20px;
+}
+
+.footer {
+  display: block;
+  /*position: fixed;*/
+  bottom: 0;
+  padding: 2px; /* Some padding */
+  text-align: left; /* Left text*/
+  background: #ddd; /* Grey background */
+}
+
+.allSteps {
+  display: block;
+  position: relative;
+  max-width: 1400px;
+  margin: 0px auto 18px;
+  background-color: rgb(244,244,244);
+  -webkit-box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.75);
+     -moz-box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.75);
+          box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.75);
+}
+/* Hide all steps by default: */
+.anvilSteps {
+  display: none;   
+}
+.navButton {
+  background-color: #04AA6D;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 110%;
+  font-family: Raleway;
+  cursor: pointer;
+  width: 200px;
+  margin: 1px;
+}
+.navButton:hover {
+  opacity: 0.7;
+}
+#prevBtn, #resetBtn {
+  background-color: #bbbbbb;
+}
+.step {    /* Make circles that indicate the steps of the form: */
+  height: 35px;
+  width: 35px;
+  margin: 0 2px;
+  padding: 6px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+.step.active {
+  opacity: 1;
+}
+.step.finish {    /* Mark the steps that are finished and valid: */
+  background-color: #04AA6D;
+}
+.grandButton {
+/*
+  rgb(145 136 77);  // active, dark gold
+  rgb(166 156 107);
+  rgb(185 178 137);  // inactive, light gold
+*/
+  background-color: rgb(185 178 137);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 110%;
+  font-family: "Minion Pro", serif;
+  text-decoration: none;
+  cursor: pointer;
+  width: 200px;
+  margin: 1px;
+}
+.grandButton:hover {
+  opacity: 0.7;
+}
+.grandButton.active {
+  background-color: rgb(145 136 77);
+  opacity: 1;
+}
+.setButton {
+  background-color: #04AA6D;
+  color: #ffffff;
+  border: none;
+  padding: 2px 2px;
+  font-size: 90%;
+  font-family: "Minion Pro", serif;
+  cursor: pointer;
+  width: 45px;
+  margin: 1px;
+}
+
+input.vertical {
+  -webkit-appearance: slider-vertical;
+  writing-mode: bt-lr;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+ .navbar a, .navbar-right {
+    float: none;
+    display: block;
+    width:100%;
+  }
+  .navbar-centered a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+}

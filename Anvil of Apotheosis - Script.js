@@ -2343,8 +2343,9 @@ function showTab(n) {  // This function will display the specified tab of the fo
     document.getElementById("nextBtn").style.width = "";
     document.getElementById("resetBtn").innerHTML = "Reset";
     document.getElementById("nextBtn").innerHTML = "Next";
-    document.getElementById("warscrollcard").style.display = "block";
     document.getElementById("warscrollshow").style.display = "block";
+    //document.getElementById("warscrollcard").style.display = "block";
+    clickCard();
     document.getElementById("roleDP").style.display = "block";
   };
   if (n == (x.length - 1)) {
@@ -2414,6 +2415,10 @@ function nextPrev(n) {    // This function will figure out which tab to display
         resetStepWeaponStats("orgWeaponTable");
       };
       resetRestrictionsStep6();
+      break;
+    case 7:   // step 7
+      document.getElementById("showhideCard").checked = true;
+      clickCard();
       break;
     default:  // default
       ;

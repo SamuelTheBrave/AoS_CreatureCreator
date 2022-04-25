@@ -106,14 +106,14 @@ body {
 .profile {
   width: 150px; height: 150px;
   position: absolute;
-  background: url("https://i.ibb.co/F85GW6v/AoS2_WS_wheel_wtxt.png");
+  background: url("AoS2_WS_wheel_wtxt.png");
   background-size: 150px 150px;
   z-index: 3;
   /*border: 1px solid black;*/
 }
 .statsTable .profile {
   width: 112px; height: 112px;
-  /*background: url("https://i.ibb.co/F85GW6v/AoS2_WS_wheel_wtxt.png");*/
+  /*background: url("AoS2_WS_wheel_wtxt.png");*/
   background-size: 112px 112px;
   z-index: 4;
 }
@@ -167,7 +167,7 @@ body {
 .blackstar {  /* may be added as save, move, or others */
   width: 19px; height: 19px;
   position: absolute;
-  background: url("https://i.ibb.co/gPzxHNR/Ao-S-WS-blackstar.png");  
+  background: url("AoS_WS_blackstar.png");  
   z-index: 6;
   /* <img src=https://i.ibb.co/gPzxHNR/Ao-S-WS-blackstar.png alt="WarhammerAoS" style="display:block; margin: auto auto -5px;";> */
 }
@@ -178,7 +178,7 @@ body {
   top: 10px;
   right: 2px;
   /*margin: 0px 730px;*/
-  background: url("https://i.ibb.co/602Jhky/Ao-S2-WS-pts-dot.png");
+  background: url("AoS2_WS_pts_dot.png");
   background-size: 49px 49px;*/
   z-index: 3;
 }
